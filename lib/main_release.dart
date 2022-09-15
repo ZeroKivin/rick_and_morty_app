@@ -1,9 +1,9 @@
-import 'package:template/config/app_config.dart';
-import 'package:template/config/debug_options.dart';
-import 'package:template/config/environment/build_type.dart';
-import 'package:template/config/environment/environment.dart';
-import 'package:template/config/url.dart';
-import 'package:template/runner.dart';
+import 'package:rick_and_morty_app/config/app_config.dart';
+import 'package:rick_and_morty_app/config/debug_options.dart';
+import 'package:rick_and_morty_app/config/environment/build_type.dart';
+import 'package:rick_and_morty_app/config/environment/environment.dart';
+import 'package:rick_and_morty_app/config/url.dart';
+import 'package:rick_and_morty_app/runner.dart';
 
 /// Main entry point of app.
 void main() {

@@ -1,8 +1,8 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:template/config/debug_options.dart';
-import 'package:template/config/url.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen_widget_model.dart';
+import 'package:rick_and_morty_app/config/debug_options.dart';
+import 'package:rick_and_morty_app/config/url.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_widget_model.dart';
 
 /// Debug screens.
 class DebugScreen extends ElementaryWidget<IDebugScreenWidgetModel> {

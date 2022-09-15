@@ -1,7 +1,7 @@
 // ignore_for_file: cast_nullable_to_non_nullable, strict_raw_type
 
 import 'package:flutter/foundation.dart';
-import 'package:template/config/environment/build_type.dart';
+import 'package:rick_and_morty_app/config/environment/build_type.dart';
 
 /// Environment configuration.
 class Environment<T> implements Listenable {

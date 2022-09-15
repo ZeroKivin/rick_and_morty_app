@@ -1,4 +1,4 @@
-import 'package:template/config/debug_options.dart';
+import 'package:rick_and_morty_app/config/debug_options.dart';
 
 /// Application configuration.
 class AppConfig {

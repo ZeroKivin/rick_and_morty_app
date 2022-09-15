@@ -3,10 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:elementary/elementary.dart';
 import 'package:kiwi/kiwi.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:template/config/app_config.dart';
-import 'package:template/config/environment/environment.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen_export.dart';
-import 'package:template/util/error_handler/default_error_handler.dart';
+import 'package:rick_and_morty_app/config/app_config.dart';
+import 'package:rick_and_morty_app/config/environment/environment.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_export.dart';
+import 'package:rick_and_morty_app/util/error_handler/default_error_handler.dart';
 
 class Injector {
   Injector() {

@@ -27,7 +27,7 @@ class _$AppRouter extends RootStackRouter {
   };
 
   @override
-  List<RouteConfig> get routes => [RouteConfig(DebugRoute.name, path: '/')];
+  List<RouteConfig> get routes => [RouteConfig(DebugRoute.name, path: 'debug')];
 }
 
 /// generated route for
@@ -39,7 +39,8 @@ class DebugRoute extends PageRouteInfo<DebugRouteArgs> {
               BuildContext)
           wmFactory = debugScreenWidgetModelFactory})
       : super(DebugRoute.name,
-            path: '/', args: DebugRouteArgs(key: key, wmFactory: wmFactory));
+            path: 'debug',
+            args: DebugRouteArgs(key: key, wmFactory: wmFactory));
 
   static const String name = 'DebugRoute';
 }

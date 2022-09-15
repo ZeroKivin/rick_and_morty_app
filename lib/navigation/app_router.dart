@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen_export.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_export.dart';
 
 part 'app_router.gr.dart';
 

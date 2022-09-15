@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen_export.dart';
-import 'package:template/internal/app.dart';
-import 'package:template/internal/di/injector.dart';
-import 'package:template/navigation/app_router.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_export.dart';
+import 'package:rick_and_morty_app/internal/app.dart';
+import 'package:rick_and_morty_app/internal/di/injector.dart';
+import 'package:rick_and_morty_app/navigation/app_router.dart';
 
 class AppDependencies extends StatefulWidget {
   const AppDependencies({

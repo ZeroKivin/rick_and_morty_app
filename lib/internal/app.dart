@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:template/assets/app_theme.dart';
-import 'package:template/config/app_config.dart';
-import 'package:template/config/environment/environment.dart';
-import 'package:template/navigation/app_router.dart';
+import 'package:rick_and_morty_app/assets/app_theme.dart';
+import 'package:rick_and_morty_app/config/app_config.dart';
+import 'package:rick_and_morty_app/config/environment/environment.dart';
+import 'package:rick_and_morty_app/navigation/app_router.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

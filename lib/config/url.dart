@@ -1,5 +1,5 @@
-import 'package:template/config/app_config.dart';
-import 'package:template/config/environment/environment.dart';
+import 'package:rick_and_morty_app/config/app_config.dart';
+import 'package:rick_and_morty_app/config/environment/environment.dart';
 
 /// Server urls.
 abstract class Url {
@@ -10,10 +10,10 @@ abstract class Url {
   static String get devProxyUrl => '';
 
   /// Prod url.
-  static String get prodUrl => '';
+  static String get prodUrl => 'https://rickandmortyapi.com/api';
 
   /// Dev url.
-  static String get devUrl => '';
+  static String get devUrl => 'https://rickandmortyapi.com/api';
 
   /// Base url.
   static String get baseUrl => Environment<AppConfig>.instance().config.url;

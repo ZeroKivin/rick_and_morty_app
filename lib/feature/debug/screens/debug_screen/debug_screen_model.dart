@@ -1,11 +1,11 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:template/config/app_config.dart';
-import 'package:template/config/debug_options.dart';
-import 'package:template/config/environment/environment.dart';
-import 'package:template/config/url.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen.dart';
-import 'package:template/feature/debug/screens/debug_screen/debug_screen_widget_model.dart';
+import 'package:rick_and_morty_app/config/app_config.dart';
+import 'package:rick_and_morty_app/config/debug_options.dart';
+import 'package:rick_and_morty_app/config/environment/environment.dart';
+import 'package:rick_and_morty_app/config/url.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen.dart';
+import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_widget_model.dart';
 
 // ignore_for_file: avoid_positional_boolean_parameters
 
