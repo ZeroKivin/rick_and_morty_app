@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/util/types.dart';
 
@@ -21,6 +19,3 @@ class LocationDto {
 
   factory LocationDto.fromJson(Json json) => _$LocationDtoFromJson(json);
 }
-
-FutureOr<LocationDto> deserializeLocationDto(Json json) =>
-    LocationDto.fromJson(json);

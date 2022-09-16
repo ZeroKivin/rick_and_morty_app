@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/util/types.dart';
 
@@ -46,6 +44,3 @@ class CharacterDto {
 
   factory CharacterDto.fromJson(Json json) => _$CharacterDtoFromJson(json);
 }
-
-FutureOr<CharacterDto> deserializeCharacterDto(Json json) =>
-    CharacterDto.fromJson(json);

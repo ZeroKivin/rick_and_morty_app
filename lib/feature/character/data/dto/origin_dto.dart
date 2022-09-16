@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/util/types.dart';
 
@@ -21,5 +19,3 @@ class OriginDto {
 
   factory OriginDto.fromJson(Json json) => _$OriginDtoFromJson(json);
 }
-
-FutureOr<OriginDto> deserializeOriginDto(Json json) => OriginDto.fromJson(json);
