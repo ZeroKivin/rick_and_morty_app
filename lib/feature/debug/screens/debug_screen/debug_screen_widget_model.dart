@@ -12,8 +12,8 @@ import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_scre
 
 /// Factory for [DebugScreenWidgetModel].
 DebugScreenWidgetModel debugScreenWidgetModelFactory(
-    BuildContext context,
-    ) {
+  BuildContext context,
+) {
   final model = DebugScreenModel(
     errorHandler: context.read<ErrorHandler>(),
     environment: Environment<AppConfig>.instance(),

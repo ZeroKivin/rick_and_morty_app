@@ -1,15 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/util/types.dart';
 
-part 'info_dto.g.dart';
+part 'pagination_info_dto.g.dart';
 
 @JsonSerializable(
   includeIfNull: false,
   fieldRename: FieldRename.snake,
   createToJson: false,
 )
-class InfoDto {
-  InfoDto({
+class PaginationInfoDto {
+  PaginationInfoDto({
     required this.count,
     required this.pages,
     this.next,
@@ -21,5 +21,6 @@ class InfoDto {
   final String? next;
   final String? prev;
 
-  factory InfoDto.fromJson(Json json) => _$InfoDtoFromJson(json);
+  factory PaginationInfoDto.fromJson(Json json) =>
+      _$PaginationInfoDtoFromJson(json);
 }

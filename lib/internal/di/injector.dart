@@ -5,6 +5,8 @@ import 'package:kiwi/kiwi.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:rick_and_morty_app/config/app_config.dart';
 import 'package:rick_and_morty_app/config/environment/environment.dart';
+import 'package:rick_and_morty_app/feature/character/data/repository/character_repository.dart';
+import 'package:rick_and_morty_app/feature/character/data/service/character_service.dart';
 import 'package:rick_and_morty_app/util/error_handler/default_error_handler.dart';
 
 class Injector {
@@ -19,14 +21,26 @@ class Injector {
 
   void _createContainer() {
     final dio = _initDio();
-    final errorHandler = DefaultErrorHandler();
 
     _container
       ..registerSingleton<Dio>(
         (_) => dio,
       )
       ..registerSingleton<ErrorHandler>(
-        (_) => errorHandler,
+        (_) => DefaultErrorHandler(),
+      )
+      ..registerSingleton<ThemeWrapper>(
+        (_) => ThemeWrapper(),
+      )
+      ..registerSingleton<CharacterService>(
+        (container) => CharacterService(
+          container.resolve<Dio>(),
+        ),
+      )
+      ..registerSingleton<ICharacterRepository>(
+        (container) => CharacterRepository(
+          container.resolve<CharacterService>(),
+        ),
       );
   }
 

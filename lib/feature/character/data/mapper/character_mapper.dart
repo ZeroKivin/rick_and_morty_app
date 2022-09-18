@@ -1,6 +1,15 @@
 import 'package:rick_and_morty_app/feature/character/data/dto/character_dto_export.dart';
 import 'package:rick_and_morty_app/feature/character/domain/entity/character_entity_export.dart';
 
+CharacterPagination manCharacterPagination(
+  CharacterPaginationDto characterPaginationDto,
+) {
+  return CharacterPagination(
+    info: _mapPaginationInfo(characterPaginationDto.info),
+    results: characterPaginationDto.results.map(mapCharacter).toList(),
+  );
+}
+
 Character mapCharacter(CharacterDto characterDto) {
   return Character(
     id: characterDto.id,
@@ -54,4 +63,8 @@ Location _mapLocation(LocationDto locationDto) {
     name: locationDto.name,
     url: locationDto.url,
   );
+}
+
+PaginationInfo _mapPaginationInfo(PaginationInfoDto paginationInfoDto) {
+  return PaginationInfo(hasNext: paginationInfoDto.next != null);
 }

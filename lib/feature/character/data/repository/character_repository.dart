@@ -10,11 +10,12 @@ class CharacterRepository implements ICharacterRepository {
   final CharacterService _characterService;
 
   @override
-  Future<Iterable<Character>> getCharacters({int page = 1}) async {
+  Future<CharacterPagination> getCharacters({int? page}) async {
     try {
-      final characters = await _characterService.getCharacters(page: page);
+      final characterPagination =
+          await _characterService.getCharacters(page: page);
 
-      return characters.results.map(mapCharacter);
+      return manCharacterPagination(characterPagination);
     } on DioError catch (error) {
       throw CharacterListException(message: error.message);
     }
@@ -22,5 +23,5 @@ class CharacterRepository implements ICharacterRepository {
 }
 
 abstract class ICharacterRepository {
-  Future<Iterable<Character>> getCharacters({int page = 1});
+  Future<CharacterPagination> getCharacters({int? page});
 }
