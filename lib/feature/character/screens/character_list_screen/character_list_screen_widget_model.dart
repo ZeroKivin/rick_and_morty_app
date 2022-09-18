@@ -13,7 +13,6 @@ import 'package:rick_and_morty_app/feature/character/screens/character_list_scre
 import 'package:rick_and_morty_app/navigation/app_router.dart';
 import 'package:rick_and_morty_app/navigation/snack_bar_messenger.dart';
 
-/// Factory for [CharacterListScreenWidgetModel].
 CharacterListScreenWidgetModel characterListScreenWidgetModelFactory(
   BuildContext context,
 ) {
@@ -29,11 +28,9 @@ CharacterListScreenWidgetModel characterListScreenWidgetModelFactory(
   );
 }
 
-/// Widget Model for [CharacterListScreen].
 class CharacterListScreenWidgetModel
     extends WidgetModel<CharacterListScreen, CharacterListScreenModel>
     implements ICharacterListScreenWidgetModel {
-  /// Create an instance [CharacterListScreenWidgetModel].
   CharacterListScreenWidgetModel({
     required CharacterListScreenModel model,
     required AppRouter navigation,
@@ -67,12 +64,12 @@ class CharacterListScreenWidgetModel
 
     _loadCharacters();
 
-    _characterListController.addListener(_updatePaginationData);
+    _characterListController.addListener(_updateCharacterData);
   }
 
   @override
   void dispose() {
-    _characterListController.removeListener(_updatePaginationData);
+    _characterListController.removeListener(_updateCharacterData);
 
     super.dispose();
   }
@@ -86,13 +83,15 @@ class CharacterListScreenWidgetModel
     }
   }
 
-  void _updatePaginationData() {
+  /// Load more characters if scroll has reached end of page.
+  void _updateCharacterData() {
     if (_characterListController.position.pixels ==
         _characterListController.position.maxScrollExtent) {
       _loadCharacters();
     }
   }
 
+  /// Get actual characters data.
   Future<void> _loadCharacters() async {
     final previousData = _characterListState.value?.data;
     _characterListState.loading(previousData);
@@ -105,12 +104,14 @@ class CharacterListScreenWidgetModel
   }
 }
 
-/// Interface of [CharacterListScreenWidgetModel].
 abstract class ICharacterListScreenWidgetModel extends IWidgetModel {
+  /// Return listenable state of characters data.
   ListenableState<EntityState<UnmodifiableListView<Character>>>
       get characterListState;
 
+  /// Return text style for character card.
   TextStyle get cardTextStyle;
 
+  /// Return scroll controller for characters list.
   ScrollController get characterListController;
 }

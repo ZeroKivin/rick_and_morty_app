@@ -7,11 +7,9 @@ import 'package:rick_and_morty_app/feature/character/domain/entity/character.dar
 import 'package:rick_and_morty_app/feature/character/screens/character_list_screen/character_list_screen_widget_model.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-/// CharacterList screens.
 @immutable
 class CharacterListScreen
     extends ElementaryWidget<ICharacterListScreenWidgetModel> {
-  /// Create an instance [CharacterListScreen].
   const CharacterListScreen({
     Key? key,
     WidgetModelFactory wmFactory = characterListScreenWidgetModelFactory,
@@ -129,6 +127,7 @@ class _CharacterCard extends StatelessWidget {
   }
 }
 
+/// Skeleton for loading state.
 @immutable
 class _ShimmerCard extends StatelessWidget {
   const _ShimmerCard({Key? key}) : super(key: key);
