@@ -3,6 +3,9 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   exclude:
     - test/**
+    - lib/**.freezed.dart
+    - lib/**.g.dart
+    - lib/**.gr.dart
   language:
     strict-inference: true
     strict-raw-types: true
@@ -69,7 +72,6 @@ dart_code_metrics:
           - i
           - id
           - qa
-          - vm
     - prefer-correct-type-name
     - prefer-enums-by-name
     - prefer-first

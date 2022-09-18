@@ -13,12 +13,9 @@ import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_scre
 class DebugScreenModel extends ElementaryModel {
   /// Create an instance [DebugScreenModel].
   DebugScreenModel({
-    required this.errorHandler,
+    required ErrorHandler errorHandler,
     required this.environment,
   }) : super(errorHandler: errorHandler);
-
-  /// Interface for handle error in business logic.
-  final ErrorHandler errorHandler;
 
   /// Environment configuration.
   final Environment<AppConfig> environment;

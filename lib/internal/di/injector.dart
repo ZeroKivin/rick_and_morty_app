@@ -5,7 +5,6 @@ import 'package:kiwi/kiwi.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:rick_and_morty_app/config/app_config.dart';
 import 'package:rick_and_morty_app/config/environment/environment.dart';
-import 'package:rick_and_morty_app/feature/debug/screens/debug_screen/debug_screen_export.dart';
 import 'package:rick_and_morty_app/util/error_handler/default_error_handler.dart';
 
 class Injector {
@@ -13,20 +12,21 @@ class Injector {
     _createContainer();
   }
 
-  final KiwiContainer container = KiwiContainer();
+  final KiwiContainer _container = KiwiContainer();
+
+  /// Return instance of type [T].
+  T resolve<T>() => _container.resolve<T>();
 
   void _createContainer() {
     final dio = _initDio();
     final errorHandler = DefaultErrorHandler();
 
-    container
-      ..registerInstance<Dio>(dio)
-      ..registerInstance<ErrorHandler>(errorHandler)
-      ..registerFactory(
-        (container) => DebugScreenModel(
-          errorHandler: container.resolve(),
-          environment: Environment<AppConfig>.instance(),
-        ),
+    _container
+      ..registerSingleton<Dio>(
+        (_) => dio,
+      )
+      ..registerSingleton<ErrorHandler>(
+        (_) => errorHandler,
       );
   }
 
