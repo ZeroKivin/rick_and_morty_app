@@ -71,6 +71,13 @@ class CharacterListScreenWidgetModel
   }
 
   @override
+  void dispose() {
+    _characterListController.removeListener(_updatePaginationData);
+
+    super.dispose();
+  }
+
+  @override
   void onErrorHandle(Object error) {
     super.onErrorHandle(error);
 
