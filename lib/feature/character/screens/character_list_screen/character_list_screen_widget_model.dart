@@ -71,6 +71,9 @@ class CharacterListScreenWidgetModel
   void dispose() {
     _characterListController.removeListener(_updateCharacterData);
 
+    _characterListState.dispose();
+    _characterListController.dispose();
+
     super.dispose();
   }
 
