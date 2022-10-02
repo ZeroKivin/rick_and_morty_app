@@ -18,8 +18,10 @@ dart_code_metrics:
   anti-patterns:
     - long-method:
         exclude:
-          - lib/assets/theme/app_theme.dart
-    - long-parameter-list
+          - lib/assets/theme/**.dart
+    - long-parameter-list:
+        exclude:
+        - lib/assets/theme/**.dart
   metrics:
     cyclomatic-complexity: 20
     source-lines-of-code: 60

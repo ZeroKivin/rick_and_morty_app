@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppTypography {
-  static const TextStyle medium18 = TextStyle(
+  static const TextStyle medium20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
@@ -11,8 +11,33 @@ abstract class AppTypography {
   );
 }
 
-extension CustomStyle on TextTheme {
-  TextStyle get medium18 => AppTypography.medium18;
+class CharacterListTypography extends ThemeExtension<CharacterListTypography> {
+  const CharacterListTypography({
+    required this.cardTitle,
+  });
 
-  TextStyle get medium14 => AppTypography.medium14;
+  final TextStyle cardTitle;
+
+  @override
+  ThemeExtension<CharacterListTypography> copyWith({
+    TextStyle? cardTitle,
+  }) {
+    return CharacterListTypography(
+      cardTitle: cardTitle ?? this.cardTitle,
+    );
+  }
+
+  @override
+  ThemeExtension<CharacterListTypography> lerp(
+    ThemeExtension<CharacterListTypography>? other,
+    double t,
+  ) {
+    if (other is! CharacterListTypography) {
+      return this;
+    }
+
+    return CharacterListTypography(
+      cardTitle: TextStyle.lerp(cardTitle, other.cardTitle, t)!,
+    );
+  }
 }

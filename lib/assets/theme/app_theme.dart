@@ -26,10 +26,26 @@ class AppTheme {
           surface: AppColor.white,
           onSurface: AppColor.black,
         ),
+        extensions: [
+          const ColorTheme(
+            white: AppColor.white,
+            black: AppColor.black,
+            primaryBlue: AppColor.primaryBlue,
+            darkBlue: AppColor.darkBlue,
+            orange: AppColor.orange,
+            red: AppColor.red,
+            grey: AppColor.grey,
+          ),
+          CharacterListTypography(
+            cardTitle: AppTypography.medium14.copyWith(
+              color: AppColor.white,
+            ),
+          ),
+        ],
         appBarTheme: AppBarTheme(
           color: AppColor.primaryBlue,
           scrolledUnderElevation: 8,
-          titleTextStyle: AppTypography.medium18.copyWith(
+          titleTextStyle: AppTypography.medium20.copyWith(
             color: AppColor.white,
           ),
         ),
